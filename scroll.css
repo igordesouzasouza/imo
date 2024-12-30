@@ -1,0 +1,41 @@
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: .6rem;                          /* Largura da barra de rolagem */
+    border-radius: .5rem;                  /* Borda arredondada */
+    background-color: hsl(228, 8%, 95%);   /* Cor de fundo clara */
+}
+  
+::-webkit-scrollbar-thumb{
+    background-color: hsl(228, 8%, 64%);   /* Cor do "polegar" da barra de rolagem */
+    border-radius: .5rem;                  /* Borda arredondada do polegar */
+}
+  
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(228, 8%, 54%);   /* Cor mais escura ao passar o mouse */
+}
+  
+/*=============== SCROLL UP ===============*/
+.scrollup{
+    position: fixed;                       /* Posição fixa na tela */
+    right: 1rem;                          /* Distância da direita */
+    bottom: -30%;                         /* Inicialmente escondido abaixo da tela */
+    background-color: var(--container-color); /* Cor de fundo do botão */
+    box-shadow: 0 8px 12px hsla(228, 66%, 45%, .1); /* Sombra suave */
+    display: inline-flex;                 /* Layout flexível inline */
+    padding: .35rem;                      /* Espaçamento interno */
+    border-radius: .25rem;                /* Borda arredondada */
+    color: var(--title-color);            /* Cor do ícone */
+    font-size: 1.25rem;                   /* Tamanho do ícone */
+    z-index: var(--z-tooltip);            /* Camada de empilhamento */
+    transition: .3s;                      /* Transição suave */
+}
+  
+.scrollup:hover{
+    transform: translateY(-.25rem);        /* Move ligeiramente para cima ao passar o mouse */
+    color: var(--first-color);            /* Muda a cor ao passar o mouse */
+}
+  
+/* Show Scroll Up*/
+.show-scroll{
+    bottom: 8rem;                         /* Posição quando visível */
+}

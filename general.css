@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIÁVEIS CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Cores ==========*/
+  /* Cores em modo HSL (matiz, saturação, luminosidade) */
+  --first-color: hsl(228, 66%, 53%);          /* Cor principal */
+  --first-color-alt: hsl(228, 66%, 47%);      /* Variação mais escura */
+  --first-color-light: hsl(228, 62%, 59%);    /* Variação mais clara */
+  --first-color-lighten: hsl(228, 100%, 97%); /* Variação bem clara */
+  --second-color: hsl(25, 83%, 53%);          /* Cor secundária */
+  --title-color: hsl(228, 57%, 28%);          /* Cor dos títulos */
+  --text-color: hsl(228, 15%, 50%);           /* Cor do texto principal */
+  --text-color-light: hsl(228, 12%, 75%);     /* Cor do texto claro */
+  --border-color: hsl(228, 99%, 98%);         /* Cor das bordas */
+  --body-color: #fff;                         /* Cor de fundo do corpo */
+  --container-color: #fff;                    /* Cor dos containers */
+
+  /*========== Fontes e Tipografia ==========*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --body-font: 'Poppins', sans-serif;         /* Fonte principal */
+  --biggest-font-size: 2.25rem;               /* Tamanho maior */
+  --h1-font-size: 1.5rem;                     /* Título h1 */
+  --h2-font-size: 1.25rem;                    /* Título h2 */
+  --h3-font-size: 1rem;                       /* Título h3 */
+  --normal-font-size: .938rem;                /* Texto normal */
+  --small-font-size: .813rem;                 /* Texto pequeno */
+  --smaller-font-size: .75rem;                /* Texto menor */
+
+  /*========== Peso das Fontes ==========*/
+  --font-medium: 500;                         /* Peso médio */
+  --font-semi-bold: 600;                      /* Peso semi-negrito */
+
+  /*========== Índices z ==========*/
+  --z-tooltip: 10;                            /* Tooltips */
+  --z-fixed: 100;                             /* Elementos fixos */
+}
+
+/* Tipografia Responsiva */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== ESTILOS BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;                    /* Rolagem suave */
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background: linear-gradient(170deg, hsl(0, 0%, 6%) 30%, hsl(0, 0%, 6%) 30%);
+  color: var(--text-color);
+}
+
+h1, h2 {
+  color: white;
+  font-weight: var(--font-semi-bold);
+}
+
+h3 {
+  color: black;
+}
+
+ul {
+  list-style: none;                          /* Remove marcadores de lista */
+}
+
+a {
+  text-decoration: none;                      /* Remove sublinhado dos links */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  outline: none;
+  border: none;
+}
+
+/*=============== CLASSES CSS REUTILIZÁVEIS ===============*/
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.section__title span {
+  color: var(--second-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--second-color);
+}
+
+.main {
+  overflow: hidden;                           /* Para animações do ScrollReveal */
+}
+
+/*=============== PONTOS DE QUEBRA ===============*/
+/* Para dispositivos pequenos */
+@media screen and (max-width: 400px){
+  .container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .section{
+    padding: 3.5rem 0 1rem;
+  }
+}
+
+/* Para dispositivos médios */
+@media screen and (min-width: 578px) {
+  .container__card{
+    grid-template-columns: repeat(2, 192px);
+  }
+}
+
+/* Para dispositivos grandes */
+@media screen and (min-width: 1020px) {
+  .section{
+    padding: 7.5rem 0 1rem;
+  }
+
+  .section__title{
+    font-size: 2.25rem;
+  }
+
+  .section__subtitle{
+    font-size: var(--normal-font-size);
+  }
+}
+
+@media screen and (min-width: 1040px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Para resoluções 2K e 4K */
+@media screen and (min-width: 2048px){
+  body{
+    zoom: 1.5;                               /* Aumenta zoom para telas 2K */
+  }
+}
+
+@media screen and (min-width: 3840px){
+  body{
+    zoom: 2;                                 /* Aumenta zoom para telas 4K */
+  }
+}

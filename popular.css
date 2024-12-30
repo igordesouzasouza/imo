@@ -1,0 +1,85 @@
+/*=============== Popular Section ===============*/
+.popular__container{
+  padding: 1rem 0 5rem;
+}
+
+/* Estilo do cartão individual */
+.popular__card{
+  width: 290px;
+  padding: .5rem .5rem 1.5rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  transition: .4s;
+  /* Adicionando efeito de vidro */
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo da imagem dentro do cartão */
+.popular__img{
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  width: 360px;
+  height: 260px;
+}
+
+/* Container para os dados do imóvel */
+.popular__data{
+  padding: 0 1rem 0 .5rem;
+}
+
+/* Estilo do preço */
+.popular__price{
+  font-size: var(--h2-font-size);
+  color: var(--text-color);
+  margin-bottom: .25rem;
+}
+
+/* Estilo para elementos span dentro do preço */
+.popular__price span{
+  color: var(--second-color);
+}
+
+/* Estilo do título do imóvel */
+.popular__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .75rem;
+}
+
+/* Estilo da descrição do imóvel */
+.popular__description{
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+
+/* Efeito hover no cartão */
+.popular__card:hover{
+  box-shadow: 0 12px 16px hsla(228, 66%, 45%, .1);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* Para dispositivos pequenos (até 320px) */
+@media screen and (max-width: 320px){ 
+  .popular__card{
+    width: 230px;
+    padding: .5rem .5rem .75rem;
+  }
+}
+
+/* Para dispositivos grandes (1020px ou mais) */
+@media screen and (min-width: 1020px) {
+  .popular__container{
+    padding-top: 3rem;
+  }
+
+  .popular__card{
+    width: 320px;
+    padding: .75rem .75rem 2rem;
+  }
+
+  .popular__data{
+    padding: 0 .25rem 0 .75rem;
+  }
+}

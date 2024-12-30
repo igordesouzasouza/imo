@@ -1,0 +1,94 @@
+/*=============== FOOTER ===============*/
+.footer__container{
+  display: flex;                /* Define layout flexível */
+  justify-content: space-around; /* Distribui espaço igualmente entre elementos */
+  flex-wrap: wrap;              /* Permite quebra de linha quando necessário */
+  align-self: center;           /* Centraliza verticalmente */
+  padding: 1rem;                /* Espaçamento interno */
+}
+  
+.footer__logo{
+  color: var(--first-color);              /* Cor principal definida em variável */
+  font-size: var(--h3-font-size);         /* Tamanho da fonte do logo */
+  font-weight: var(--font-semi-bold);     /* Peso da fonte */
+  display: inline-flex;                   /* Layout flexível inline */
+  align-items: center;                    /* Centraliza itens verticalmente */
+  column-gap: .25rem;                     /* Espaço entre colunas */
+  margin-bottom: .75rem;                  /* Margem inferior */
+}
+  
+.footer__logo i{
+  font-size: 1.25rem;                    /* Tamanho do ícone */
+}
+
+/* Estilos compartilhados para descrição e links */
+.footer__description,
+.footer__link{
+  font-size: var(--small-font-size);      /* Tamanho menor de fonte */
+  font-weight: var(--font-medium);         /* Peso médio da fonte */
+}
+
+.footer__title{
+  font-size: var(--h3-font-size);         /* Tamanho do título */
+  margin-bottom: 1rem;                     /* Espaço abaixo do título */
+}
+
+.footer__links{
+  display: grid;                           /* Layout em grade */
+  row-gap: .5rem                           /* Espaço entre linhas */
+}
+
+.footer__link{
+  color: var(--text-color);                /* Cor do texto do link */
+  transition: .3s;                         /* Transição suave */
+}
+
+.footer__link:hover{
+  color: var(--title-color)                /* Cor ao passar o mouse */
+}
+
+.footer__social{
+  display: flex;                           /* Layout flexível */
+  column-gap: 1rem;                        /* Espaço entre ícones sociais */
+}
+
+.footer__social-link{
+  font-size: 1.55rem;                      /* Tamanho dos ícones sociais */
+  color: var(--text-color);                /* Cor dos ícones */
+  transition: .3s;                         /* Transição suave */
+}
+
+.footer__social-link:hover{
+  color: var(--title-color);               /* Cor ao passar o mouse */
+}
+
+.footer__info{
+  text-align: center;                      /* Centraliza o texto */
+  font-size: 12px;                         /* Tamanho da fonte */
+  padding-bottom: 8rem;                    /* Espaço inferior */
+  margin-top: 5.5rem;                      /* Margem superior */
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* Para dispositivos pequenos */
+@media screen and (max-width: 1020px) {
+  .footer__logo{
+    display: flex;
+    justify-content: center;               /* Centraliza o logo */
+  }
+
+  .footer__content{
+    padding: 0rem 3rem 0rem 3rem;          /* Ajusta espaçamento */
+    justify-content: center;                /* Centraliza conteúdo */
+  }
+
+  .footer__title{
+    display: flex;
+    justify-content: center;               /* Centraliza título */
+  }
+
+  .footer__description{
+    text-align: center;                    /* Centraliza descrição */
+    padding-bottom: 3rem;                  /* Espaço inferior */
+  }
+}

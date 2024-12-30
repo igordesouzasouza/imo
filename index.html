@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Meta tags para configuração da página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliaria</title>
+    <!-- Arquivo CSS principal -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Biblioteca de ícones Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>  
+    <!-- CSS do Swiper para o carrossel de imagens -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>  
+</head>
+<body>
+    
+<!-- Cabeçalho com navegação principal -->
+<header class="header" id="header">
+    <nav class="nav container">
+        <!-- Logo do site -->
+        <a href="#" class="nav__logo">
+            Karina Cristina Prim<i class='bx bxs-home-alt-2'></i>
+        </a>
+        <!-- Menu de navegação -->
+        <div class="nav__menu">
+            <!-- Lista de links de navegação -->
+            <ul class="nav__list">
+                <!-- Links individuais com ícones e botões -->
+                <li class="nav__item">
+                    <a href="#home" class="nav__link activate-link">
+                        <i class='bx bx-home-alt-2'></i>
+                        <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Home</button>
+                    </a>
+                </li>    
+
+                <li class="nav__item">
+                    <a href="#value" class="nav__link">
+                        <i class='bx bx-building-house' ></i>
+                        <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Valores</button>
+                    </a>
+                </li>    
+
+                <li class="nav__item">
+                    <a href="#popular" class="nav__link">
+                        <i class='bx bx-award' ></i>
+                        <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Casas</button>
+                    </a>
+                </li>   
+
+                <li class="nav__item">
+                    <a href="./login.html" class="nav__link">
+                        <i class='bx bx-phone'></i>
+                        <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Login</button>
+                    </a>
+                </li>    
+                <li class="nav__item">
+                    <li class="nav__item">
+                        <a href="./vendaimovel.html" class="nav__link">
+                            <i class='bx bx-phone'></i>
+                            <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Sou vendedor</button>
+                        </a>
+                    </li>
+                </li>
+                    <a href="./contato.html" class="nav__link">
+                        <i class='bx bx-phone'></i>
+                        <button class="nav__button" style=" background: linear-gradient(45deg, #feba00, #c77313); color: white; border-radius: 10px; padding: 10px 20px; border: none;">Contato</button>
+                    </a>
+                </li>
+            </ul>
+        </div> 
+    </nav>       
+</header>
+
+
+<!-- Seção principal/banner -->
+<main class="main">
+    <section class="home section" id="home" >
+       <!-- Container com informações principais -->
+       <div class="home__container container grid" >
+            <!-- Dados do banner (texto e números) -->
+            <div class="home__data">
+                <h1 class="home__title" style="width: 1200px;">
+                    Descubra as melhores <br>residências
+                    
+                </h1>
+                <p class="home__description" style="width: 800px;">
+                    Encontre residências que combinam com você com muita facilidade. Esqueça todas as dificuldades em encontrar uma lar ideal para você.
+                </p>
+
+                <div class="div home__value" style="justify-content: center; align-items: center;" >
+                    <div>
+                        <h1 class="home__value-number">
+                            330mil<span>+</span>
+                        </h1>
+                        <span class="home__value-description">
+                            Produto <br> Premium
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <h1 class="home__value-number">
+                            150mil<span>+</span>
+                        </h1>
+                        <span class="home__value-description">
+                            Para<br> Solteiros
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <h1 class="home__value-number">
+                            300mil<span>+</span>
+                        </h1>
+                        <span class="home__value-description">
+                            Ideal para<br> Casais
+                        </span>
+                    </div>
+                </div> 
+            </div>
+
+       </div>      
+    </section>
+
+<!-- Seção de logos dos parceiros -->
+<section class="logos section" id="logos">
+    <!-- Grid com logos das construtoras parceiras -->
+    <div class="logos__container container grid">
+        <div class="logos__img">
+            <img src="./cifra.png" alt="Construtora Parceira">
+        </div>
+        <div class="logos__img">
+            <img src="./bini.png" alt="Construtora Parceira">
+        </div>
+        <div class="logos__img">
+            <img src="./imovel.png" alt="Construtora Parceira">
+        </div>
+        <div class="logos__img">
+            <img src="./rio do sul.png" alt="Construtora Parceira">
+        </div>
+    </div>
+</section>
+
+
+<!-- Seção de valores da empresa -->
+<section class="value section" id="value">
+    <!-- Container com imagem e conteúdo -->
+    <div class="value__container container grid">
+        <!-- Imagem ilustrativa -->
+        <div class="value__images">
+            <div class="value__orbe"></div>
+
+            <div class="value__img">
+                <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg" style="width: 490px; height: 620px;"  alt="">
+            </div>
+        </div>    
+        <!-- Conteúdo dos valores -->
+        <div class="value__content">
+            <div class="value_data">
+                
+                <h2 class="section__title">
+                    Damos valor a você<span>.</span>
+                </h2>
+                <p class="value__description">
+                    Estamos sempre prontos em ajudar a encontrar o melhor lugar para sua vida.
+                </p>
+
+            <!--Item 1-->
+            <div class="value__accordion">
+                <div class="value__accordion-item">
+                    <header class="value__accordion-header">
+                        <i class='bx bxs-star value__accordion-icon'></i>
+                        <h3 class="value__accordion-title">
+                            Os melhores imóveis para você.
+                        </h3>
+                        <div class="value__accordion-arrow">
+                            <i class='bx bxs-down-arrow'></i>
+                        </div>
+                    </header>
+
+                    <div class="value__accordion-content">
+                        <p class="value__accordion-description">
+                            Imóveis de qualidade em regiões privilegiadas.
+                        </p>
+                    </div>
+                </div>
+
+            <!--Item 2-->           
+                <div class="value__accordion-item">
+                    <header class="value__accordion-header">
+                        <i class='bx bxs-bar-chart-square value__accordion-icon'></i>
+                        <h3 class="value__accordion-title">
+                            Os melhores preços do mercado.
+                        </h3>
+                        <div class="value__accordion-arrow">
+                            <i class='bx bxs-down-arrow'></i>
+                        </div>
+                    </header>
+
+                    <div class="value__accordion-content">
+                        <p class="value__accordion-description">
+                            Buscamos sempre as melhores ofertas do mercado, para que você possa encontrar seu lar com as melhores condições.
+                        </p>
+                    </div>
+                </div>
+
+            <!--Item 3-->      
+                <div class="value__accordion-item">
+                    <header class="value__accordion-header">
+                        <i class='bx bxs-check-square value__accordion-icon'></i>
+                        <h3 class="value__accordion-title">
+                            Seus dados seguros
+                        </h3>
+                        <div class="value__accordion-arrow">
+                            <i class='bx bxs-down-arrow'></i>
+                        </div>
+                    </header>
+
+                    <div class="value__accordion-content">
+                        <p class="value__accordion-description">
+                            Garantimos sua privacidade mantendo seus dados seguros sem qualquer compartilhamento. 
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de imóveis populares -->
+<section class="popular section" id="popular">
+    <!-- Container com título e carrossel -->
+    <div class="container">
+        <!-- Subtítulo e título da seção -->
+        <span class="section__subtitle"></span>
+        <h2 class="section__title">
+            Casas populares
+        </h2>
+
+        <!-- Carrossel de imóveis -->
+        <div class="popular__container swiper">
+            <!-- Wrapper do Swiper -->
+            <div class="swiper-wrapper">
+                <!-- Cards individuais de imóveis -->
+                <!-- Cada article representa um imóvel -->
+                <article class="popular__card swiper-slide" style="user-select:none">
+                    <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg" alt="" class="popular__img">
+                    <div class="popular__data">
+                        <h2 class="popular__price" style="color: white;">
+                            <span>R$</span>250.000
+                        </h2>
+                        <h3 style="color: white;">
+                            Apartamento 3 Qts
+                        </h3>
+                        <p class="popular__description" style="color: white;">
+                            Rio do Sul - Quadra 105,
+                            Torre 2, Apto 305
+                        </p>
+                    </div>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg" alt="" class="popular__img">
+                    <div class="popular__data">
+                        <h2 class="popular__price" style="color: white;">
+                            <span>R$</span>320.000
+                        </h2>
+                        <h3 class="popular__title" style="color: white;">
+                            Casa 5 Suites
+                        </h3>
+                        <p class="popular__description" style="color: white;">
+                            Rio do Sul - Quadra 105,
+                            Torre 2, Apto 305
+                        </p>
+                    </div>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg" alt="" class="popular__img">
+                    <div class="popular__data">
+                        <h2 class="popular__price" style="color: white;">
+                            <span>R$</span>1.250.000
+                        </h2>
+                        <h3 class="popular__title" style="color: white;">
+                            Casa 2 Quartos
+                        </h3>
+                        <p class="popular__description" style="color: white;">
+                            Rio do Sul - Quadra 105,
+                            Torre 2, Apto 305
+                        </p>
+                    </div>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg" alt="" class="popular__img">
+                    <div class="popular__data">
+                        <h2 class="popular__price" style="color: white;">
+                            <span>R$</span>150.000
+                        </h2>
+                        <h3 class="popular__title" style="color: white;">
+                            Casa 3 Quartos
+                        </h3>
+                        <p class="popular__description" style="color: white;">
+                            Rio do Sul - Quadra 105,
+                            Torre 2, Apto 305
+                        </p>
+                    </div>
+                </article>
+
+                <article class="popular__card swiper-slide">
+                    <img src="./DALL·E 2024-12-30 10.37.33 - A modern residential property viewed from the front, featuring a sleek architectural design with large glass windows, minimalist structure, and a land.jpg"  alt="" class="popular__img">
+                    <div class="popular__data">
+                        <h2 class="popular__price" style="color: white;">
+                            <span>R$</span>750.000
+                        </h2>
+                        <h3 class="popular__title" style="color: white;">
+                            Lote 1000m²
+                        </h3>
+                        <p class="popular__description" style="color: white;">
+                            Rio do Sul - Quadra 105,
+                            Torre 2, Apto 305
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- Paginação do carrossel -->
+            <div class="swiper-pagination"></div> 
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé do site -->
+<footer class="footer section">
+    <!-- Informações da empresa e redes sociais -->
+    <div class="footer__container container grid">
+        <div>
+            <a href="#" style="color: white;">
+                Karina Cristina Prim<i class='bx bxs-home-alt-2'></i>
+            </a>
+            <p class="footer__description">
+                Minha missão é fazer as pessoas <br>
+                encontrarem o melhor lugar para viver.
+            </p>
+        </div>
+
+        
+    </div>
+    <!-- Copyright -->
+    <div class="footer__info ">
+        <span class="footer__copy">
+            &#169; Karina Cristina Prim. Todos os direitos reservados.
+        </span>
+    </div>
+</footer>
+
+<!-- Botão de voltar ao topo -->
+<a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-chevrons-up'></i>
+</a>
+
+<!-- Scripts externos -->
+<!-- ScrollReveal para animações -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- Swiper JS para o carrossel -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- JavaScript principal do site -->
+<script src="./assets/js/main.js"></script>
+    
+</body>
+</html>

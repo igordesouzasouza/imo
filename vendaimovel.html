@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda seu Imóvel</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a, #3a4452);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(255, 181, 34, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:hover, select:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        select option {
+            background: #3a4452;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #c77313, #feba00);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 0.8rem;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #feba00, #c77313);
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .nav__button_cadastro {
+            max-width: 360px;
+            margin-top: 0.8rem;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(255, 181, 34, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-button {
+            width: auto;
+            min-width: 200px;
+        }
+
+        .file-input {
+            color: #fff;
+        }
+
+        .file-input::-webkit-file-upload-button {
+            background: linear-gradient(45deg, #c77313, #feba00);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Karina Cristina Prim</h1>
+        <h2>Venda seu Imóvel</h2>
+        <form id="formVendaImovel">
+            <div class="form-group">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input
+                    type="text"
+                    id="nomeCompleto"
+                    name="nomeCompleto"
+                    placeholder="Seu nome completo"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="Seu telefone"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Seu email"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="tipoImovel">Tipo do Imóvel</label>
+                <select id="tipoImovel" name="tipoImovel" required>
+                    <option value="">Selecione o tipo</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="terreno">Terreno</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço do Imóvel</label>
+                <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    placeholder="Endereço completo"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input
+                    type="text"
+                    id="cidade"
+                    name="cidade"
+                    placeholder="Nome da cidade"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="tamanho">Tamanho do Imóvel (m²)</label>
+                <input
+                    type="number"
+                    id="tamanho"
+                    name="tamanho"
+                    placeholder="Área em metros quadrados"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor do Imóvel (R$)</label>
+                <input
+                    type="number"
+                    id="valor"
+                    name="valor"
+                    placeholder="Valor pretendido"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto do Imóvel</label>
+                <input
+                    type="file"
+                    id="foto"
+                    name="foto"
+                    accept="image/*"
+                    class="file-input"
+                    required
+                />
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+            <a href="index.html" style="flex: 1;">
+                <button type="button">
+                    Voltar para Página Inicial
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon"><img src="./download__12_-removebg-preview.png" alt=""></div>
+            <div class="success-message">Imóvel cadastrado com sucesso!</div>
+            <button class="modal-button" onclick="window.location.href='index.html'">Voltar para Home</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("formVendaImovel").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Mostra o modal de sucesso
+            const modal = document.getElementById("successModal");
+            modal.style.display = "flex";
+        });
+
+        // Fecha o modal se clicar fora dele
+        document.getElementById("successModal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+</code_block_to_apply_changes_from>
+
+ 

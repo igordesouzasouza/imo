@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a, #3a4452);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(255, 181, 34, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #c77313, #feba00);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 0.8rem;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #feba00, #c77313);
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .nav__button_cadastro {
+            max-width: 360px;
+            margin-top: 0.8rem;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(255, 181, 34, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-button {
+            width: auto;
+            min-width: 200px;
+        }
+
+        /* Estilo adicional para as etapas */
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Karina Cristina Prim</h1>
+        <h2>Redefinir Senha</h2>
+
+        <!-- Etapa 1: Email -->
+        <form id="stepEmail" class="step active">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu email cadastrado"
+                    required
+                />
+            </div>
+            <button type="submit">Receber código de verificação</button>
+        </form>
+
+        <!-- Etapa 2: Código de Verificação -->
+        <form id="stepVerification" class="step">
+            <div class="form-group">
+                <label for="codigo">Código de Verificação</label>
+                <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    placeholder="Digite o código recebido por email"
+                    required
+                />
+            </div>
+            <button type="submit">Verificar código</button>
+        </form>
+
+        <!-- Etapa 3: Nova Senha -->
+        <form id="stepNewPassword" class="step">
+            <div class="form-group">
+                <label for="novaSenha">Nova Senha</label>
+                <input
+                    type="password"
+                    id="novaSenha"
+                    name="novaSenha"
+                    placeholder="Digite sua nova senha"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="confirmarNovaSenha">Confirmar Nova Senha</label>
+                <input
+                    type="password"
+                    id="confirmarNovaSenha"
+                    name="confirmarNovaSenha"
+                    placeholder="Confirme sua nova senha"
+                    required
+                />
+            </div>
+            <button type="submit">Salvar nova senha</button>
+        </form>
+
+        <div style="display: flex; justify-content: center; margin-top: 1rem;">
+            <a href="login.html" style="flex: 1;">
+                <button class="nav__button_cadastro" type="button">
+                    Voltar para Login
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon"><img src="./download__12_-removebg-preview.png" alt=""></div>
+            <div class="success-message">Senha alterada com sucesso!</div>
+            <button class="modal-button" onclick="window.location.href='login.html'">Ir para Login</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar próxima etapa
+        function showStep(stepId) {
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById(stepId).classList.add('active');
+        }
+
+        // Etapa 1: Email
+        document.getElementById("stepEmail").addEventListener("submit", function(e) {
+            e.preventDefault();
+            // Aqui você adicionaria a lógica para enviar o código por email
+            showStep('stepVerification');
+        });
+
+        // Etapa 2: Verificação
+        document.getElementById("stepVerification").addEventListener("submit", function(e) {
+            e.preventDefault();
+            // Aqui você adicionaria a lógica para verificar o código
+            showStep('stepNewPassword');
+        });
+
+        // Etapa 3: Nova Senha
+        document.getElementById("stepNewPassword").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const novaSenha = document.getElementById("novaSenha").value;
+            const confirmarNovaSenha = document.getElementById("confirmarNovaSenha").value;
+
+            if (novaSenha !== confirmarNovaSenha) {
+                alert("As senhas não coincidem!");
+                return;
+            }
+
+            // Aqui você pode adicionar a lógica para salvar a nova senha no backend
+
+            // Mostra o modal de sucesso apenas após confirmar que as senhas são iguais
+            const modal = document.getElementById("successModal");
+            modal.style.display = "flex";
+            
+            // Opcional: Redirecionar para a página de login após alguns segundos
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 3000); // Redireciona após 3 segundos
+        });
+
+        // Fecha o modal se clicar fora dele
+        document.getElementById("successModal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+ 

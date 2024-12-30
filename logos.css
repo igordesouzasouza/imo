@@ -1,0 +1,64 @@
+/*=============== SEÇÃO DE LOGOS ===============*/
+.logos {
+    /* Fundo gradiente escuro */
+    background: linear-gradient(170deg, hsl(0, 0%, 6%) 30%, hsl(0, 0%, 6%) 30%);
+}
+
+.logos__container{
+    padding-top: 2rem;                     /* Espaço superior */
+    grid-template-columns: repeat(2, 1fr);  /* Define 2 colunas de tamanho igual */
+    gap: 3rem 2rem;                        /* Espaçamento entre elementos (vertical horizontal) */
+    justify-content: center;                /* Centraliza na horizontal */
+    align-items: center;                    /* Centraliza na vertical */
+}
+  
+.logos__img img{
+    height: 60px;                          /* Altura das imagens */
+    opacity: .3;                           /* Transparência das imagens */
+    transition: .8s;                       /* Tempo de transição dos efeitos */
+}
+  
+.logos__img img:hover{
+    opacity: .9;                           /* Aumenta opacidade ao passar o mouse */
+    scale: 1.50;                          /* Aumenta o tamanho em 50% */
+}
+
+/*=============== PONTOS DE QUEBRA ===============*/
+/* Para telas pequenas */
+@media screen and (max-width: 320px){ 
+    .logos__container{
+        gap: 2rem 1rem;                    /* Reduz espaço entre elementos */
+    }
+}
+
+/* Para tablets pequenos */
+@media screen and (min-width: 578px) {
+    .logos__img img{
+        height: 60px;                      /* Define altura da imagem */
+        margin-left: 35px;                 /* Margem à esquerda */
+    }
+}
+
+/* Para tablets */
+@media screen and (min-width: 767px){
+    .logos__img{
+        padding: 1.5rem;                   /* Espaçamento interno */
+    }
+
+    .logos__img img{
+        height: 35px;                      /* Altura reduzida */
+        padding-left: 35px;                /* Espaço à esquerda */
+    }
+}
+
+/* Para computadores */
+@media screen and (min-width: 1020px) {
+    .logos__container{
+        grid-template-columns: repeat(4, max-content);  /* 4 colunas com tamanho do conteúdo */
+        justify-content: center;                        /* Centraliza horizontalmente */
+    }
+
+    .logos__img img{
+        height: 50px;                      /* Altura para telas grandes */
+    }
+}

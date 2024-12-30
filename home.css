@@ -1,0 +1,152 @@
+/*=============== SEÇÃO HOME ===============*/
+/* Estilo do container principal */
+.home {
+  /* Gradiente de fundo do preto ao cinza escuro */
+  background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
+  padding-bottom: 0;
+}
+
+/* Animação suave para todos os botões */
+button {
+  transition: all 0.1s ease;
+}
+
+/* Efeito de escala ao passar o mouse sobre botões */
+button:hover {
+  scale: 1.05;
+}
+
+
+/* Container principal com espaçamento superior */
+.home__container {
+  padding-top: 4rem;
+  row-gap: 3.5rem;
+}
+
+
+/* Cor branca para título e números */
+.home__title,
+.home__value-number {
+  color: #fff;
+}
+
+/* Estilização do título principal */
+.home__title {
+  font-size: var(--biggest-font-size);
+  line-height: 120%;
+  margin-bottom: 1.25rem;
+  
+}
+
+/* Estilo da descrição */
+.home__description {
+  color: var(--text-color-light);
+  margin-bottom: 2rem;
+}
+
+/* Container dos valores/estatísticas */
+.home__value {
+  display: flex;
+  column-gap: 2.5rem;
+}
+
+/* Estilo dos números nas estatísticas */
+.home__value-number {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+}
+
+/* Cor diferente para spans dentro dos números */
+.home__value-number span {
+  color: var(--second-color);
+}
+
+/* Estilo da descrição dos valores */
+.home__value-description {
+  display: flex;
+  color: var(--text-color-light);
+  font-size: var(--smaller-font-size);
+}
+
+/* Container das imagens */
+.home__images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Elemento decorativo circular (orbe) */
+
+
+
+
+/*=============== PONTOS DE QUEBRA (RESPONSIVIDADE) ===============*/
+/* Para dispositivos pequenos */
+@media screen and (max-width: 400px) {
+  /* Ajustes para telas pequenas */
+  .home {
+    padding-bottom: 0;
+  }
+
+  .home__value {
+    column-gap: 1rem;
+  }
+}
+
+/* Para dispositivos muito pequenos */
+@media screen and (max-width: 320px) {
+  /* Ajustes específicos para telas muito pequenas */
+  .home__value {
+    column-gap: 1rem;
+  }
+
+  
+}
+
+/* Para tablets e dispositivos médios */
+@media screen and (min-width: 767px) {
+  /* Layout em duas colunas */
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+  }
+
+
+  .home__data {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Para dispositivos grandes (desktop) */
+@media screen and (min-width: 1020px) {
+  /* Ajustes para telas grandes */
+  .home {
+    padding-bottom: 0;
+  }
+
+  .home__container {
+    padding-top: 5rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+  }
+
+  .home__data {
+    padding-bottom: 4rem;
+  }
+
+  .home__title {
+    margin-bottom: 2rem;
+  }
+
+  .home__description,
+  .home__search {
+    margin-bottom: 3rem;
+  }
+
+  .home__value {
+    column-gap: 3.5rem;
+  }
+
+  
+}
